@@ -8,7 +8,11 @@ class RecetaRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', recetaController_1.recetaController.index); //Ruta inicial devuelve hellow
+        this.router.get('/', recetaController_1.recetaController.list); //Ruta inicial
+        this.router.get('/:id', recetaController_1.recetaController.getOne);
+        this.router.post('/', recetaController_1.recetaController.create);
+        this.router.put('/:id', recetaController_1.recetaController.update);
+        this.router.delete('/:id', recetaController_1.recetaController.delete);
     }
 }
 const recetaRoutes = new RecetaRoutes();
