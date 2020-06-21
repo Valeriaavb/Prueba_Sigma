@@ -12,6 +12,7 @@ class PasoRoutes {
         this.router.post('/', pasoController_1.pasoController.create);
         this.router.put('/:id', pasoController_1.pasoController.update);
         this.router.delete('/:id', pasoController_1.pasoController.delete);
+        this.router.delete('/receta/:id', pasoController_1.pasoController.deletePasosCom);
     }
 }
 const pasoRoutes = new PasoRoutes();

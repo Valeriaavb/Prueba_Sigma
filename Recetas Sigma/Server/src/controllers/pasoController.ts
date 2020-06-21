@@ -25,6 +25,12 @@ class PasoController{
         await db.query('DELETE FROM paso WHERE id_paso = ?', [id]);
         res.json({message: ':El paso fue eliminado'});
     }
+
+    public async deletePasosCom (req: Request, res: Response): Promise<void>{
+        const {id} = req.params;
+        await db.query('DELETE FROM paso WHERE id_receta = ?', [id]);
+        res.json({message: ':El paso fue eliminado'});
+    }
 }
 
  export const pasoController = new PasoController();

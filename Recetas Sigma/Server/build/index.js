@@ -9,6 +9,8 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const recetaRoutes_1 = __importDefault(require("./routes/recetaRoutes"));
 const pasoRoutes_1 = __importDefault(require("./routes/pasoRoutes"));
+const ingredienteRecetaRoutes_1 = __importDefault(require("./routes/ingredienteRecetaRoutes"));
+const ingredienteRoutes_1 = __importDefault(require("./routes/ingredienteRoutes"));
 class Server {
     constructor() {
         this.app = express_1.default(); //inicialización  de express
@@ -26,6 +28,8 @@ class Server {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/recetas', recetaRoutes_1.default);
         this.app.use('/api/pasos', pasoRoutes_1.default);
+        this.app.use('/api/ingredienteReceta', ingredienteRecetaRoutes_1.default);
+        this.app.use('/api/ingrediente', ingredienteRoutes_1.default);
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -5,6 +5,8 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import recetaRoutes from './routes/recetaRoutes';
 import pasoRoutes from './routes/pasoRoutes';
+import ingredienteRecetaRoutes from './routes/ingredienteRecetaRoutes';
+import ingredienteRoutes from './routes/ingredienteRoutes';
 
 class Server {
 
@@ -28,6 +30,8 @@ class Server {
         this.app.use('/',indexRoutes);
         this.app.use('/api/recetas',recetaRoutes);
         this.app.use('/api/pasos',pasoRoutes);
+        this.app.use('/api/ingredienteReceta',ingredienteRecetaRoutes);
+        this.app.use('/api/ingrediente',ingredienteRoutes);
     }
 
     start(): void {  //iniciar el servidor

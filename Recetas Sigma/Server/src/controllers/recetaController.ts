@@ -16,8 +16,8 @@ class RecetaController{
     }
 
     public async create (req: Request, res: Response): Promise<void>{
-        await db.query('INSERT INTO receta set ?', [req.body]);
-        res.json({message: 'Receta guardada'});
+        const receta  = await db.query('INSERT INTO receta set ?', [req.body]);
+        res.json(receta);
     }
 
     public async update (req: Request, res: Response): Promise<void>{

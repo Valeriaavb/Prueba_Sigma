@@ -33,8 +33,8 @@ class RecetaController {
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            yield database_1.default.query('INSERT INTO receta set ?', [req.body]);
-            res.json({ message: 'Receta guardada' });
+            const receta = yield database_1.default.query('INSERT INTO receta set ?', [req.body]);
+            res.json(receta);
         });
     }
     update(req, res) {
