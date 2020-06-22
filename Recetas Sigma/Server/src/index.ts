@@ -36,7 +36,6 @@ class Server {
 
     start(): void {  //iniciar el servidor
         this.app.listen(this.app.get('port'), () => {
-            console.log('Server on port ', this.app.get('port'));
         });
     }
 }

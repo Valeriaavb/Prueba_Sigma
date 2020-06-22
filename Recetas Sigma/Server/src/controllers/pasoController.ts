@@ -5,7 +5,7 @@ class PasoController{
 
     public async list (req: Request,res:Response): Promise<any>{
         const { id } = req.params;
-        const paso = await db.query('SELECT * FROM paso WHERE id_receta = ? ', [id]);
+        const paso = await db.query('SELECT * FROM paso WHERE id_receta = ? Order by (paso.numero_paso) ASC', [id]);
             return res.json(paso); 
     }
 

@@ -8,7 +8,6 @@ const pool =mysql.createPool(keys.database); //realizar conexion con la BD
 pool.getConnection()
     .then(connection => {
         pool.releaseConnection(connection);
-        console.log('DB is connected');
     });
 
 export default pool;

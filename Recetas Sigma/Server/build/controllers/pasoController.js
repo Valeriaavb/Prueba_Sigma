@@ -18,7 +18,7 @@ class PasoController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const paso = yield database_1.default.query('SELECT * FROM paso WHERE id_receta = ? ', [id]);
+            const paso = yield database_1.default.query('SELECT * FROM paso WHERE id_receta = ? Order by (paso.numero_paso) ASC', [id]);
             return res.json(paso);
         });
     }
